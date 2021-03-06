@@ -71,6 +71,10 @@ I followed the lessons to implement PID control. I have no additional .cpp or .h
 
 
 ### The effect each of the P, I, D components 
-1. The proportional control tries to reduce the error according to the control input Up = -Kp x (cross track error). If this is used on its own the car oscillates around the center of the road and the overshoots eventually drive it out of the road as seen in the gif below.
+1. The proportional control tries to reduce the error according to the control input $U_{P}$(t) = -$K_{P}$(t) x CTE(t). If this is used on its own the car oscillates around the center of the road and the overshoots eventually drive it out of the road as seen in the gif below.
 
 <img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/P.gif"/>
+
+2. The integeral control tries to reduce the integerated error according to control input $U_{I}$(t) = -$K_{I}$(t) x $\int_{0}^{t}$ CTE(t). Integral control is ususlly not applied on its own and I show below the result for PI control where $U_{PI}$(t) = $U_{P}$(t) + $U_{I}$(t). As you can see even the PI controller is not capable to produce stable result. The car overshoots the lane center and leaves the road.
+
+<img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/PI.gif"/>
