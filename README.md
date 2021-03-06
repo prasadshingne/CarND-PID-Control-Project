@@ -49,16 +49,23 @@ The instructions are from [here](https://medium.com/@kaigo/how-to-install-udacit
 I used VSCode IDE for this project. Follow the thorough instructions provided by [yosoufe](https://gist.github.com/yosoufe/dd37284b7319c484dd77e42947fc82b7) to setup the environment. The instructions cover debugging as well which maybe useful.
 
 
-## [Rubric](https://review.udacity.com/#!/rubrics/1972/view)
+#[Rubric](https://review.udacity.com/#!/rubrics/1972/view)
 
-###Compilation
+##Compilation
 
 My code compiles without errors with cmake and make. I didn't make any changes to CMakeLists.txt.
 
-###Implementation
+Output: cmake
+<img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/cmake.jpg"/>
+
+Output: make
+<img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/cmake.jpg"/>
+
+
+##Implementation
 
 I followed the lessons to implement PID control. I have no additional .cpp or .h files although I use two separate PIDs for steering and throttle control.
 
-###Reflection
+##Reflection
 
 
