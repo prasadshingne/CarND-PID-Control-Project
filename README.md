@@ -100,7 +100,7 @@ Note: I acknowledge that the tuning of the PID could be done in multiple differe
 
 The vehicle successfully drives a lap around the track with my selected PID gain values. My solution video is shared via YouTube. Link below.
 
-<a href="https://www.youtube.com/watch?v=5AQ89yUmonM" target="_blank"><img src="http://img.youtube.com/vi/5AQ89yUmonM/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="https://www.youtube.com/watch?v=5AQ89yUmonM" target="_blank"><img src="http://img.youtube.com/vi/5AQ89yUmonM/0.jpg" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 
 
