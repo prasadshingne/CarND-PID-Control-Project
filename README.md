@@ -64,8 +64,13 @@ Output: make
 
 ## Implementation
 
-I followed the lessons to implement PID control. I have no additional .cpp or .h files although I use two separate PIDs for steering and throttle control.
+I followed the lessons to implement PID control. I have no additional .cpp or .h files although I use two separate PIDs for steering and throttle control. The implementation is done in [./src/PID.cpp](https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/src/PID.cpp).[PID::UpdateError](https://github.com/prasadshingne/CarND-PID-Control-Project/blob/98764fad334ce323884c301b6c5c24a01679e90c/src/PID.cpp#L27) calculates the proportional, integral and derivative errors and [PID::TotalError](https://github.com/prasadshingne/CarND-PID-Control-Project/blob/98764fad334ce323884c301b6c5c24a01679e90c/src/PID.cpp#L39) calculates the total error with the respective coefficients. I have another method [PID::TotalSpeedError](https://github.com/prasadshingne/CarND-PID-Control-Project/blob/98764fad334ce323884c301b6c5c24a01679e90c/src/PID.cpp#L53) that does the same thing as [PID::TotalError](https://github.com/prasadshingne/CarND-PID-Control-Project/blob/98764fad334ce323884c301b6c5c24a01679e90c/src/PID.cpp#L39) except that it limits the output to [0, 1] for the throttle instead of [-1, 1] as in the case of the steering.
+
 
 ## Reflection
 
 
+### The effect each of the P, I, D components 
+1. The proportional control tries to reduce the error according to the control input Up = -Kp x (cross track error). If this is used on its own the car oscillates around the center of the road and the overshoots eventually drive it out of the road as seen in the gif below.
+
+<img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/P.gif"/>
