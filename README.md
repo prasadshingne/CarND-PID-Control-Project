@@ -71,10 +71,19 @@ I followed the lessons to implement PID control. I have no additional .cpp or .h
 
 
 ### The effect each of the P, I, D components 
-1. The proportional control tries to reduce the error according to the control input ![formula](https://render.githubusercontent.com/render/math?math=U_{P}(t)%20=K_{P}(t)%20\cdot%20CTE(t)). If this is used on its own the car oscillates around the center of the road and the overshoots eventually drive it out of the road as seen in the gif below.
+* The proportional control tries to reduce the error according to the control input ![formula](https://render.githubusercontent.com/render/math?math=\color{gray}%20{U_{P}(t)%20=%20-%20K_{P}(t)%20\cdot%20CTE(t)}%20). If this is used on its own the car oscillates around the center of the road and the overshoots eventually drive it out of the road as seen in the gif below.
 
 <img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/P.gif"/>
 
-2. The integeral control tries to reduce the integerated error according to control input ![formula](https://render.githubusercontent.com/render/math?math=U_{I}(t)%20=%20-K_{I}(t)%20%20\int_{0}^{t}%20CTE(t)). Integral control is ususlly not applied on its own and I show below the result for PI control where ![formula](https://render.githubusercontent.com/render/math?math=U_{PI}(t)%20=%20U_{P}(t)%20%2B%20U_{I}(t)). As you can see even the PI controller is not capable to produce stable result. The car overshoots the lane center and leaves the road.
+* The integeral control tries to reduce the integerated error according to control input ![formula](https://render.githubusercontent.com/render/math?math=\color{gray}%20{U_{I}(t)%20=%20-%20K_{I}(t)%20\cdot%20\int_{0}^{t}%20CTE(t)}). Integral control is ususlly not applied on its own and its main use is reducing the offset error after P and D are applied. I show below the result for PI control where ![formula](https://render.githubusercontent.com/render/math?math=\color{gray}%20{U_{PI}(t)%20=%20K_{P}(t)%20%2B%20K_{I}(t)}). As you can see even the PI controller is not capable to produce stable result. The car overshoots the lane center and leaves the road.
 
 <img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/PI.gif"/>
+
+* The differential control tries to reduce the differential error according to the control input ![formula](https://render.githubusercontent.com/render/math?math=\color{gray}%20{U_{D}(t)%20=%20-%20K_{D}(t)%20\cdot%20\frac{\text{d}CTE(t)}{\text{d}t}}). Differential control is also not typically applied on its own and its main use is as a damper to reduce the oscillations and reduce the settling time for a second order system. Below I compare the PD and PID control. You will notice that both controllers work to keep the car within the lanes. The car with PD control takes a wider turn and PID control keeps the car closer to the center even in the curve.
+
+
+|  PD    |    PID    |
+|:------:|:---------:|
+|<img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/PD.gif"/>|<img src="https://github.com/prasadshingne/CarND-PID-Control-Project/blob/master/output/PID.gif"/>|
+
+
